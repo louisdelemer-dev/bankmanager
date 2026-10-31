@@ -1,26 +1,17 @@
-# BANK MANAGER — Alpha 0.3
+# BANK MANAGER Alpha 0.4 — Politique commerciale et concurrence
 
-Simulateur local de direction d'une banque régionale fictive : agences, clients, crédits, marketing, recrutements, siège, salle des marchés et bilan. Aucun serveur, aucune base externe, aucun npm.
+Jeu de simulation bancaire fictif 100 % local, hébergé par GitHub et Netlify (sans backend).
 
-## Installation sur GitHub + Netlify
+## Nouveautés
+- Menu **Produits & tarifs** : modification des prix de 8 produits, dans des fourchettes prédéfinies.
+- Benchmarks concurrents simulés évoluant chaque mois avec taux directeur fictif, chômage, inflation et confiance.
+- Acquisition et départs quotidiens des clients selon l’attractivité de chaque segment.
+- Marketing dont les taux de conversion dépendent des tarifs et de la capacité des agences.
+- Demandes de crédits des conseillers utilisant la grille des taux de la banque.
+- Sauvegardes compatibles avec Alpha 0.1–0.3 (clé `bank-manager-alpha-01`).
 
-1. Décompresser le ZIP et déposer **les fichiers à la racine** de votre dépôt GitHub existant.
-2. Netlify : **Base directory** vide, **Build command** vide, **Publish directory** `.`.
-3. Redéployer le site. Si la version précédente reste affichée, recharger avec `Ctrl+F5`.
+## Publication Netlify
+Décompressez à la racine du dépôt GitHub. Build command : vide. Publish directory : `.`. `netlify.toml` est fourni.
 
-## À jouer
-
-- **Direction générale** : avancer le temps (1 jour ou 30 jours) ou lancer la simulation.
-- **Comité de crédit** : les conseillers génèrent des demandes ; examiner puis accepter, refuser ou modifier le montant/taux/durée en contre-proposition. Une contre-proposition reçoit sa réponse après 24 heures simulées ; elle ne produit aucun crédit avant l'acceptation du client.
-- **Marketing** : lancer des campagnes en choisissant cible, budget quotidien et durée. Le budget est dépensé au lancement ; les prospects et ouvertures sont générés au fil du temps. Les ouvertures sont validées automatiquement par le siège, sans validation du joueur.
-- **Personnel** : recruter des conseillers pour augmenter la capacité commerciale, au siège ou en salle des marchés.
-- **Crédits** : consulter le portefeuille de crédits, les intérêts et remboursements ; les demandes sont désormais décidées par le joueur.
-- **Sauvegardes** : export/import JSON, nouvelle partie et sauvegarde locale automatique dans `localStorage`.
-
-## Mises à jour et compatibilité
-
-Cette version conserve la clé `bank-manager-alpha-01` et le format `version:1`. Les anciennes sauvegardes seront enrichies des nouvelles données de campagne et de demande, sans suppression du portefeuille de crédits existant. **Exportez d'abord votre partie par précaution.** Les nouveaux dossiers apparaissent en avançant le temps.
-
-## Limites
-
-Les clients, scores de risque, marchés, conversions marketing, délais et conditions sont fictifs. Le ratio de fonds propres est indicatif, non réglementaire. Le bilan simplifié n'est pas une comptabilité bancaire complète. Le jeu n'exécute aucune véritable opération bancaire et les taux de réponse, coûts et conversions sont des hypothèses ludiques. Les sauvegardes peuvent être effacées par un nettoyage du navigateur : exportez-les régulièrement.
+## Important
+Tous les cours, taux, scénarios et références concurrentielles sont **fictifs** et ne prétendent pas reproduire les taux du marché bancaire français en vigueur. Les fourchettes sont des limites de gameplay, pas des limites réglementaires. Le moteur reste simplifié, notamment concernant dépôts réglementés, scoring, provisions et réglementation bancaire. Le simulateur conserve les sauvegardes en localStorage : exportez régulièrement vos parties depuis l’onglet Sauvegardes.
