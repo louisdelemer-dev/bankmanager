@@ -1,23 +1,29 @@
-# BANK MANAGER — Alpha 0.1
+# BANK MANAGER — Alpha 0.2
 
-Simulateur personnel de gestion d'une banque régionale française. **Aucun serveur applicatif, aucun Supabase, aucune dépendance npm**. Banque, clients, transactions et marchés entièrement fictifs.
+Simulateur fictif de direction bancaire, **100 % local** dans le navigateur, à publier directement sur GitHub + Netlify. Aucun Supabase, aucun serveur, aucune API ni installation npm.
 
-## Publication GitHub + Netlify
-1. Créer un dépôt GitHub (`bank-manager`).
-2. Déposer les fichiers `index.html`, `style.css`, `app.js`, `netlify.toml` à la **racine**.
-3. Dans Netlify : Import existing project → GitHub ; **build command vide** ; **publish directory `.`** ; base directory vide.
-4. Ouvrir le site pour jouer.
+## Publication
 
-## Sauvegardes
-Sauvegarde automatique dans `localStorage` du navigateur et export/import JSON via Paramètres. Ne pas utiliser le mode privé pour conserver une partie. Exporter régulièrement une copie locale ; vider les données du navigateur les efface.
+1. Décompresser l'archive et placer **index.html**, **app.js**, **style.css** et **netlify.toml** à la racine du dépôt GitHub.
+2. Sur Netlify, connecter le dépôt.
+3. Build command : laisser vide. Publish directory : `.`. Base directory : vide.
+4. Déployer et recharger votre URL Netlify.
 
-## Règles V1
-- Simulation horaire, vitesse x1/x4/x12 et saut +1 jour / +30 jours.
-- Agences, clients fictifs, dépôts, crédits, intérêts, commissions, incidents, salaires, charges fixes, marché synthétique, portefeuille et recrutement.
-- Bilan simplifié cohérent : `cash + prêts + titres = dépôts + financement + fonds propres` (avec un compte de résultats et frais provisionnés pris en compte).
-- Les dépôts clients sont des **passifs**, les crédits des **actifs** ; octroyer un crédit crée un dépôt et un crédit de même montant.
-- Les opérations de marché restent des simulations synthétiques sans données réelles.
-- Ratio de fonds propres approximatif à vocation ludique, **pas un calcul réglementaire CRR**. Cette version ne remplace ni comptabilité ni logiciel bancaire réel.
+## Nouveautés 0.2
 
-## Tests manuels conseillés
-Créer un client, ouvrir un dépôt, octroyer un crédit, recruter un salarié, ouvrir une agence, acheter des titres, passer 30 jours, enregistrer/exporter/importer la partie. Vérifier la cohérence du bilan dans Finances.
+- Partie neuve avec environ 350 clients fictifs et 165 crédits constituant un portefeuille initial (le portefeuille de crédits est inscrit à l'actif, les dépôts créés au passif).
+- Production de crédits automatique optionnelle, dépendant notamment des conseillers, de l'analyste risques et d'une limite interne de capital.
+- Échéances de capital mensualisées (et non prélevées chaque jour).
+- Fonds propres / actifs pondérés **indicatifs**, avec affichage « Non calculable » si les actifs sont insuffisants.
+- Indication du produit net bancaire et du résultat cumulés.
+- Maintien des recrutements agence, siège et marchés, ouverture d'agences, portefeuille fictif de titres, achats/ventes, sauvegardes et export/import JSON.
+
+## Conservation des parties précédentes
+
+La clé de stockage `bank-manager-alpha-01` et la structure de sauvegarde `version: 1` sont conservées. Une ancienne partie continuera de fonctionner avec les nouvelles règles mais **ne recevra pas artificiellement le nouveau portefeuille initial**. Pour jouer avec les nouvelles données de départ, exportez votre sauvegarde puis cliquez sur « Nouvelle partie » dans « Sauvegardes ».
+
+## Limites
+
+Ce logiciel est une simulation pédagogique et ludique, non un système bancaire réel. Les ratios ne représentent pas les calculs prudentiels officiels ; les produits et charges sont simplifiés, la tarification client et les risques de crédit ne reproduisent pas toutes les normes IFRS, françaises ou européennes. Les marchés sont entièrement synthétiques. Le jeu ne réalise aucune opération bancaire.
+
+Les parties sont sauvegardées dans localStorage, sur ce navigateur et cet appareil. Exportez régulièrement vos parties en JSON.
