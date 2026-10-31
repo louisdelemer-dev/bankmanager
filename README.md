@@ -1,17 +1,27 @@
-# BANK MANAGER Alpha 0.4 — Politique commerciale et concurrence
+# BANK MANAGER — Alpha 0.5
 
-Jeu de simulation bancaire fictif 100 % local, hébergé par GitHub et Netlify (sans backend).
+Simulateur bancaire personnel, fictif, entièrement local. Déployable directement sur GitHub + Netlify, sans npm, sans Supabase ni backend.
 
-## Nouveautés
-- Menu **Produits & tarifs** : modification des prix de 8 produits, dans des fourchettes prédéfinies.
-- Benchmarks concurrents simulés évoluant chaque mois avec taux directeur fictif, chômage, inflation et confiance.
-- Acquisition et départs quotidiens des clients selon l’attractivité de chaque segment.
-- Marketing dont les taux de conversion dépendent des tarifs et de la capacité des agences.
-- Demandes de crédits des conseillers utilisant la grille des taux de la banque.
-- Sauvegardes compatibles avec Alpha 0.1–0.3 (clé `bank-manager-alpha-01`).
+## Installation
 
-## Publication Netlify
-Décompressez à la racine du dépôt GitHub. Build command : vide. Publish directory : `.`. `netlify.toml` est fourni.
+Décompresser le ZIP, placer `index.html`, `app.js`, `style.css`, `netlify.toml`, `README.md` à la racine du dépôt GitHub. Sur Netlify, laisser **Build command** vide et **Publish directory** à `.`.
+
+## Principales fonctions
+
+- Direction : jeu à horloge accélérée, objectifs, réputation, satisfaction, conseils et événements économiques.
+- Clients : ouvertures automatiques par le siège, évolution du portefeuille, départs pour tarification ou service insuffisants.
+- Comité de crédit : demandes montées par les conseillers, acceptation, refus, contre-propositions avec réponse différée.
+- Marketing : campagnes segmentées avec budget et durée, conversion influencée par les prix et la réputation.
+- Offres : tarifs et taux modifiables, concurrence de marché synthétique mensuelle.
+- Stratégie : quatre concurrents fictifs, part de marché, progression de missions et actualités de conjoncture.
+- Recrutements : agence, siège, salle des marchés ; ouvertures d'agences ; trading synthétique.
+- Finances : bilan simplifié avec distinction dépôts, crédits et capitaux propres.
+- Sauvegardes : navigateur (localStorage), export/import JSON.
+
+## Mises à jour
+
+Conservez d'abord une sauvegarde JSON de votre partie dans **Sauvegardes**. Remplacez les fichiers de l'ancien dépôt par ceux-ci. La version conserve la clé `bank-manager-alpha-01` et complète les parties anciennes avec les nouveaux modules.
 
 ## Important
-Tous les cours, taux, scénarios et références concurrentielles sont **fictifs** et ne prétendent pas reproduire les taux du marché bancaire français en vigueur. Les fourchettes sont des limites de gameplay, pas des limites réglementaires. Le moteur reste simplifié, notamment concernant dépôts réglementés, scoring, provisions et réglementation bancaire. Le simulateur conserve les sauvegardes en localStorage : exportez régulièrement vos parties depuis l’onglet Sauvegardes.
+
+Les taux, banques concurrentes, équilibres prudentiels, scores de risque et mouvements économiques sont fictifs. Il s'agit d'un jeu sérieux, pas d'un système bancaire ni d'un outil professionnel de conseil. Le ratio de fonds propres affiché est indicatif et ne représente pas un ratio CET1 réglementaire. Les données sont stockées dans le navigateur et peuvent être perdues si son stockage est effacé.
